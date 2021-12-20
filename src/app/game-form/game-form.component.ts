@@ -6,6 +6,7 @@ import {MbGame} from "../model/mb-game";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LazyLoadScriptService} from "../service/lazy-load-script.service";
 import {CCObjectResult} from "../../libs/cool-library/libs/model/CCObjectResult";
+import {MbUploadFile} from "../model/mb-upload-file";
 
 // typings install --save --global dt~momen
 
@@ -16,7 +17,8 @@ import {CCObjectResult} from "../../libs/cool-library/libs/model/CCObjectResult"
 })
 export class GameFormComponent implements OnInit {
 
-    mbGame: MbGame = new MbGame();
+    item: MbGame = new MbGame();
+    uploadFileList: Array<MbUploadFile> = new Array<MbUploadFile>();
 
     constructor(
         private httpClient: HttpClient,
@@ -33,7 +35,7 @@ export class GameFormComponent implements OnInit {
     async initItem() {
         await this.lazyLoadScriptService.loadBootstrapDatePicker();
 
-        this.mbGame.matchDate = moment().format();
+        this.item.matchDate = moment().format();
 
         const $matchDate = $('#matchDate') as any;
         $matchDate.datetimepicker({
@@ -44,7 +46,7 @@ export class GameFormComponent implements OnInit {
             format: 'YYYY년 MMMM Do a h시 mm분',
         })
         $matchDate.on('change.datetimepicker', (dateObj: any) => {
-            this.mbGame.matchDate = dateObj.date.format();
+            this.item.matchDate = dateObj.date.format();
         });
 
         const params = this.activatedRoute.snapshot.params;
@@ -53,15 +55,22 @@ export class GameFormComponent implements OnInit {
                 if (!response.result) {
                     return;
                 }
-                this.mbGame = response.data;
+                if (response.data.imageMeta) {
+                    response.data.imageMeta = JSON.parse(response.data.imageMeta as string);
+                    this.uploadFileList = response.data.imageMeta as Array<MbUploadFile>;
+                }
+                this.item = response.data;
                 const $matchDate = $('#matchDate') as any;
-                $matchDate.datetimepicker('date', this.mbGame.matchDate);
+                $matchDate.datetimepicker('date', this.item.matchDate);
             })
         }
     }
 
     async save(): Promise<any> {
-        this.httpClient.post<CCResult>(SAVE_GAME_URL, this.mbGame).subscribe(response => {
+        if (this.uploadFileList.length !== 0) {
+            this.item.imageMeta = JSON.stringify(this.uploadFileList); // json string 으로 저장
+        }
+        this.httpClient.post<CCResult>(SAVE_GAME_URL, this.item).subscribe(response => {
             if (!response.result) {
                 alert('저장 실패');
                 return;

@@ -15,7 +15,13 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">경기장소</label>
                         <div class="col-md-9">
-                            <input type="text" id="matchPlace" name="matchPlace" class="form-control" [(ngModel)]="mbGame.matchPlace">
+                            <input type="text" id="matchPlace" name="matchPlace" class="form-control" [(ngModel)]="item.matchPlace">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">이미지</label>
+                        <div class="col-md-9">
+                            <app-upload [uploadFileList]="uploadFileList" [isMultiple]="true"></app-upload>
                         </div>
                     </div>
                 </form>
