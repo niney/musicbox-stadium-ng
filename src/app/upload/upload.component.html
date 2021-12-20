@@ -1,0 +1,10 @@
+<div id="progress" class="mb-2">
+    <div class="bar" style="width: 0%"></div>
+</div>
+<input #refFile type="file" name="file" id="file" multiple="multiple">
+
+<ul class="list-group mt-2">
+    <li *ngFor="let file of uploadFileList" class="list-group-item d-flex justify-content-between align-items-center">
+        {{file.filename}}<span class="badge bg-primary rounded-pill">{{file.filesize}}</span>
+    </li>
+</ul>

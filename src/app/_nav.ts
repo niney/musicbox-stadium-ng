@@ -12,20 +12,35 @@ export const navItems: INavData[] = [
     },
     {
         name: '경기일정',
-        url: '/theme/colors',
+        url: '/game/list',
         icon: 'icon-puzzle'
     },
     {
         name: '기기관리',
-        url: '/theme/colors',
+        url: '/device/list',
         icon: 'icon-puzzle'
     },
     {
         name: '회원관리',
-        url: '/theme/colors',
+        url: '/user/list',
         icon: 'icon-puzzle'
     },
     {
+        name: '선수정보관리',
+        url: '/player/list',
+        icon: 'icon-puzzle'
+    },
+    {
+        name: '선수커뮤니티관리',
+        url: '/playerBbs/list',
+        icon: 'icon-puzzle'
+    },
+    {
+        name: '클럽커뮤니티관리',
+        url: '/clubBbs/list',
+        icon: 'icon-puzzle'
+    },
+    /*{
         name: 'Dashboard',
         url: '/dashboard',
         icon: 'icon-speedometer',
@@ -271,5 +286,5 @@ export const navItems: INavData[] = [
         icon: 'icon-layers',
         variant: 'danger',
         attributes: {target: '_blank', rel: 'noopener'}
-    }
+    }*/
 ];

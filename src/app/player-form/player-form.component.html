@@ -1,0 +1,221 @@
+<div class="animated fadeIn">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <strong>선수정보관리</strong>
+            </div>
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">클럽</label>
+                        <div class="col-md-9">
+                            <input type="text" id="clubName" name="clubName" class="form-control"
+                                   [(ngModel)]="item.clubName">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">본명</label>
+                        <div class="col-md-9">
+                            <input type="text" id="playerName" name="playerName" class="form-control"
+                                   [(ngModel)]="item.playerName">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">생년월일</label>
+                        <div class="col-md-9">
+                            <input type="text" id="birthDay" name="birthDay" class="form-control"
+                                   [(ngModel)]="item.birthDay">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">국적</label>
+                        <div class="col-md-9">
+                            <input type="text" id="nationality" name="nationality" class="form-control"
+                                   [(ngModel)]="item.nationality">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">출신지</label>
+                        <div class="col-md-9">
+                            <input type="text" id="hometown" name="hometown" class="form-control"
+                                   [(ngModel)]="item.hometown">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">신체조건</label>
+                        <div class="col-md-9">
+                            <input type="text" id="body" name="body" class="form-control"
+                                   [(ngModel)]="item.body">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">포지션</label>
+                        <div class="col-md-9">
+                            <input type="text" id="position" name="position" class="form-control"
+                                   [(ngModel)]="item.position">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">주발</label>
+                        <div class="col-md-9">
+                            <input type="text" id="foot" name="foot" class="form-control"
+                                   [(ngModel)]="item.foot">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">등번호</label>
+                        <div class="col-md-9">
+                            <input type="text" id="uniformNumber" name="uniformNumber" class="form-control"
+                                   [(ngModel)]="item.uniformNumber">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">클럽이력</label>
+                        <div class="col-md-9">
+                            <textarea name="clubHistory" id="clubHistory" rows="10" style="width: 100%"
+                                      [(ngModel)]="item.clubHistory">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">EPL</label>
+                        <label class="col-form-label">Goal</label>
+                        <div class="col-md-2">
+                            <input type="text" id="eplGoal" name="eplGoal" class="form-control"
+                                   [(ngModel)]="item.eplGoal">
+                        </div>
+                        <label class="col-form-label">어시스트</label>
+                        <div class="col-md-2">
+                            <input type="text" id="eplAssist" name="eplAssist" class="form-control"
+                                   [(ngModel)]="item.eplAssist">
+                        </div>
+                        <label class="col-form-label">경기수</label>
+                        <div class="col-md-2">
+                            <input type="text" id="eplGamesPlayed" name="eplGamesPlayed" class="form-control"
+                                   [(ngModel)]="item.eplGamesPlayed">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">챔스</label>
+                        <label class="col-form-label">Goal</label>
+                        <div class="col-md-2">
+                            <input type="text" id="champsGoal" name="champsGoal" class="form-control"
+                                   [(ngModel)]="item.champsGoal">
+                        </div>
+                        <label class="col-form-label">어시스트</label>
+                        <div class="col-md-2">
+                            <input type="text" id="champsAssist" name="champsAssist" class="form-control"
+                                   [(ngModel)]="item.champsAssist">
+                        </div>
+                        <label class="col-form-label">경기수</label>
+                        <div class="col-md-2">
+                            <input type="text" id="champsGamesPlayed" name="champsGamesPlayed" class="form-control"
+                                   [(ngModel)]="item.champsGamesPlayed">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">합계</label>
+                        <label class="col-form-label">Goal</label>
+                        <div class="col-md-2">
+                            <input type="text" id="totalGoal" name="totalGoal" class="form-control"
+                                   [(ngModel)]="item.totalGoal">
+                        </div>
+                        <label class="col-form-label">어시스트</label>
+                        <div class="col-md-2">
+                            <input type="text" id="totalAssist" name="totalAssist" class="form-control"
+                                   [(ngModel)]="item.totalAssist">
+                        </div>
+                        <label class="col-form-label">경기수</label>
+                        <div class="col-md-2">
+                            <input type="text" id="totalGamesPlayed" name="totalGamesPlayed" class="form-control"
+                                   [(ngModel)]="item.totalGamesPlayed">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">최근 경기 기록</label>
+                        <label class="col-form-label">상대</label>
+                        <div class="col-md-2">
+                            <input type="text" id="opponent" name="opponent" class="form-control"
+                                   [(ngModel)]="item.opponent">
+                        </div>
+                        <label class="col-form-label">Touches</label>
+                        <div class="col-md-2">
+                            <input type="text" id="touches" name="touches" class="form-control"
+                                   [(ngModel)]="item.touches">
+                        </div>
+                        <label class="col-form-label">Passes</label>
+                        <div class="col-md-2">
+                            <input type="text" id="passes" name="passes" class="form-control"
+                                   [(ngModel)]="item.passes">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label"></label>
+                        <label class="col-form-label">Shots on target</label>
+                        <div class="col-md-1">
+                            <input type="text" id="shotsOnTarget" name="shotsOnTarget" class="form-control"
+                                   [(ngModel)]="item.shotsOnTarget">
+                        </div>
+                        <label class="col-form-label">Shots on goal</label>
+                        <div class="col-md-1">
+                            <input type="text" id="shotsOnGoal" name="shotsOnGoal" class="form-control"
+                                   [(ngModel)]="item.shotsOnGoal">
+                        </div>
+                        <label class="col-form-label">Chance created</label>
+                        <div class="col-md-1">
+                            <input type="text" id="chanceCreated" name="chanceCreated" class="form-control"
+                                   [(ngModel)]="item.chanceCreated">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label"></label>
+                        <label class="col-form-label">Tackle success</label>
+                        <div class="col-md-1">
+                            <input type="text" id="tackleSuccess" name="tackleSuccess" class="form-control"
+                                   [(ngModel)]="item.tackleSuccess">
+                        </div>
+                        <label class="col-form-label">Duels won</label>
+                        <div class="col-md-1">
+                            <input type="text" id="duelsWon" name="duelsWon" class="form-control"
+                                   [(ngModel)]="item.duelsWon">
+                        </div>
+                        <label class="col-form-label">Clearances</label>
+                        <div class="col-md-1">
+                            <input type="text" id="clearances" name="clearances" class="form-control"
+                                   [(ngModel)]="item.clearances">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">동영상</label>
+                        <div class="col-md-9">
+                            <button type="button" class="btn btn-primary" [disabled]="!item.id"
+                                    routerLink="/video/form" [queryParams]="{playerId: item.id}">동영상 등록
+                            </button>
+                            <ul class="list-group mt-2">
+                                <li *ngFor="let file of item.videos"
+                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a [routerLink]="['/', 'video', 'form', file.id]">{{file.filename}}</a>
+                                    <span class="badge bg-primary rounded-pill">{{file.filesize}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">이미지</label>
+                        <div class="col-md-9">
+                            <app-upload [uploadFileList]="uploadFileList" [isMultiple]="true"></app-upload>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-sm btn-primary" (click)="save()">
+                    <i class="fa fa-dot-circle-o"></i>저장
+                </button>
+                <button type="button" class="btn btn-sm btn-danger" (click)="del()">
+                    <i class="fa fa-ban"></i> 삭제
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

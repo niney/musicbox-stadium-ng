@@ -1,0 +1,26 @@
+{
+  "_name": "cool-library-js",
+  "name": "cool-library",
+  "version": "0.2.12",
+  "description": "cool-library - TypeScript library setup for multiple compilation targets using tsc and webpack",
+  "main": "./bundles/cool-library.umd.js",
+  "module": "./index.js",
+  "es2015": "./esm2015/index.js",
+  "typings": "./index.d.ts",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/Hotell/typescript-lib-starter"
+  },
+  "author": "Niney",
+  "license": "MIT",
+  "peerDependencies": {
+    "jquery": "3.4.1",
+    "moment": "2.22.2"
+  },
+  "dependencies": {
+    "@types/jquery": "3.3.31",
+    "jquery": "3.4.1",
+    "moment": "2.22.2"
+  }
+}

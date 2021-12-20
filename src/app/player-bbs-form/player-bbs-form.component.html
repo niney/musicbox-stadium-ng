@@ -1,0 +1,63 @@
+<div class="animated fadeIn">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <strong>선수커뮤니티관리</strong>
+            </div>
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">제목</label>
+                        <div class="col-md-9">
+                            <input type="text" id="title" name="title" class="form-control"
+                                   [(ngModel)]="item.title">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">본명</label>
+                        <div class="col-md-9">
+                            <input type="text" id="playerName" name="playerName" class="form-control"
+                                   [(ngModel)]="item.playerName">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">내용</label>
+                        <div class="col-md-9">
+                            <div id="editor"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">공개여부</label>
+                        <div class="col-md-9">
+                            <input type="checkbox" value="1" id="open"
+                                   name="open" [(ngModel)]="item.open">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">조회수</label>
+                        <div class="col-md-9">
+                            <input type="text" id="views" name="views" class="form-control"
+                                   [(ngModel)]="item.views" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">작성자 순번</label>
+                        <div class="col-md-9">
+                            <input type="text" id="writerId" name="writerId" class="form-control"
+                                   [(ngModel)]="item.writerId" disabled>
+                            <span class="help-block">관리자로 고정</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-sm btn-primary" (click)="save()">
+                    <i class="fa fa-dot-circle-o"></i>저장
+                </button>
+                <button type="button" class="btn btn-sm btn-danger" (click)="del()">
+                    <i class="fa fa-ban"></i> 삭제
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

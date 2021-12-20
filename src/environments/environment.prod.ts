@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+    production: true,
+    searchUrl: '//musicbox-stadium.com',
 };

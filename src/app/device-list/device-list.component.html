@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col">
+        <div class="text-right mb-2">
+            <button type="button" class="btn btn-primary" routerLink="/device/form">만들기</button>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> 경기일정
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>제품등록일자</th>
+                        <th>SN</th>
+                        <th>구매자</th>
+                        <th>상태</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of itemList" (click)="goDetail(item)">
+                        <td>{{item.writeDate | moment: 'yyyy.MM.DD hh:mm'}}</td>
+                        <td>{{item.sn}}</td>
+                        <td>{{item.buyerName}}</td>
+                        <td>{{item.user?.id ? '연결' : '미연결'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="tui-pagination-container" class="tui-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>

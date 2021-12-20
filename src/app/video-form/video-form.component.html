@@ -1,0 +1,54 @@
+<div class="animated fadeIn">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <strong>동영상 관리</strong>
+            </div>
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">조회수</label>
+                        <div class="col-md-9">
+                            <input type="text" id="views" name="views" class="form-control" placeholder="views"
+                                   [(ngModel)]="item.views">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">작성자 순번</label>
+                        <div class="col-md-9">
+                            <input type="text" id="writerId" name="writerId" class="form-control" placeholder="views"
+                                   [(ngModel)]="item.writerId" disabled>
+                            <span class="help-block">관리자로 고정</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">동영상</label>
+                        <div class="col-md-9">
+                            <app-upload [uploadFileList]="uploadFileList" (completeEvent)="completeUpload($event)"></app-upload>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">파일 경로</label>
+                        <div class="col-md-9">
+                            <p class="form-control-static">{{item?.url}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">플레이</label>
+                        <div class="col-md-9">
+                            <video *ngIf="fullUrl" controls="controls" [src]="fullUrl" width="400"></video>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-sm btn-primary" (click)="save()">
+                    <i class="fa fa-dot-circle-o"></i>저장
+                </button>
+                <button type="button" class="btn btn-sm btn-danger" (click)="del()">
+                    <i class="fa fa-ban"></i> 삭제
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

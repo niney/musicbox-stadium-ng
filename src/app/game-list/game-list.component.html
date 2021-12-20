@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col">
+        <div class="text-right mb-2">
+            <button type="button" class="btn btn-primary" routerLink="/game/form">만들기</button>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> 경기일정
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>경기일자</th>
+                        <th>경기장소</th>
+                        <th>상태</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let game of gameList" (click)="goDetail(game)">
+                        <td>{{game.matchDate | moment: 'yyyy.MM.DD hh:mm'}}</td>
+                        <td>{{game.matchPlace}}</td>
+                        <td>{{game.status}}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div id="tui-pagination-container" class="tui-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>

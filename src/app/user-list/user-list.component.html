@@ -1,0 +1,133 @@
+<div class="row">
+    <div class="col">
+        <div class="text-right mb-2">
+            <button type="button" class="btn btn-primary" routerLink="/user/form">만들기</button>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> 회원
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>아이디</th>
+                        <th>이름</th>
+                        <th>전화번호</th>
+                        <th>이메일</th>
+                        <th>본인인증</th>
+                        <th>메일인증</th>
+                        <th>정보수집동의</th>
+                        <th>SMS수신동의</th>
+                        <th>정보제3자활용동의</th>
+                        <th>기기등록</th>
+                        <th>최종접속일</th>
+                        <th>접근차단</th>
+                        <th>권한</th>
+                        <th>상태</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let user of userList" (click)="goDetail(user)">
+                        <td>{{user.userId}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.tel}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <span *ngIf="user.identityVerify else elseBadge" class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                            <span *ngIf="user.emailVerify else elseBadge" class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                            <span *ngIf="user.infoAgree else elseBadge" class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                            <span *ngIf="user.smsAgree else elseBadge" class="badge badge-success">Active</span>
+                        </td>
+                        <td>
+                            <span *ngIf="user.thirdPartyAgree else elseBadge" class="badge badge-success">Active</span>
+                        </td>
+                        <td>-</td>
+                        <td>{{user.latestConnectionDate}}</td>
+                        <td>{{user.isBlock}}</td>
+                        <td>{{user.auth}}</td>
+                        <td>{{user.status}}</td>
+                        <!--<td>
+                            <span class="badge badge-success">Active</span>
+                        </td>-->
+                        <ng-template #elseBadge><span class="badge">No</span></ng-template>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div id="tui-pagination-container" class="tui-pagination"></div>
+            </div>
+
+            <!--<div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Date registered</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Samppa Nori</td>
+                        <td>2012/01/01</td>
+                        <td>Member</td>
+                        <td>
+                            <span class="badge badge-success">Active</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Estavan Lykos</td>
+                        <td>2012/02/01</td>
+                        <td>Staff</td>
+                        <td>
+                            <span class="badge badge-danger">Banned</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chetan Mohamed</td>
+                        <td>2012/02/01</td>
+                        <td>Admin</td>
+                        <td>
+                            <span class="badge badge-secondary">Inactive</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Derick Maximinus</td>
+                        <td>2012/03/01</td>
+                        <td>Member</td>
+                        <td>
+                            <span class="badge badge-warning">Pending</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Friderik Dávid</td>
+                        <td>2012/01/21</td>
+                        <td>Staff</td>
+                        <td>
+                            <span class="badge badge-success">Active</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </div>
+</div>
